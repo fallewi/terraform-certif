@@ -22,3 +22,9 @@ variable "sg" {
   default     = null
 }
 
+variable "az" {
+  type        = list(string)
+    description = "Cette variable me permet de définir la zone de disponibilité"
+      default     = ["us-east-1a"]
+      }
+
