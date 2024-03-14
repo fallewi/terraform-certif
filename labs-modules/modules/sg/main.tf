@@ -1,6 +1,6 @@
 resource "aws_security_group" "lewis-sg" {
   # ... other configuration ...
-  name        = "lewis_sg_http_ssh"
+  name        = "${var.tag}_sg_http_ssh"
   description = "Allow TLS inbound traffic and all outbound traffic"
   ingress {
     from_port   = 22
@@ -29,8 +29,3 @@ resource "aws_security_group" "lewis-sg" {
   }
 }
 
-
-#resource "aws_network_interface_sg_attachment" "sg_attachment" {
-#  security_group_id    = aws_security_group.lewis-sg.id
-#  network_interface_id = aws_instance.ec2.primary_network_interface_id
-#}

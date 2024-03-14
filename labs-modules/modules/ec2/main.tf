@@ -13,7 +13,7 @@ resource "aws_instance" "ec2" {
   ami                    = data.aws_ami.data_ami.id
   key_name               = var.key_name
   instance_type          = var.instance_type
-  vpc_security_group_ids = ["${aws_security_group.lewis-sg.id}"]
+  vpc_security_group_ids = var.sg[0]
   tags = {
     Name = "ec2-${var.tag}"
   }
